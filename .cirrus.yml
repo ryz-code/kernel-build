@@ -17,4 +17,4 @@ task:
       - echo "LANG=en_US.UTF-8" | sudo tee -a /etc/locale.conf
       - sudo locale-gen en_US.UTF-8
       - wget https://raw.githubusercontent.com/ryz-code/my-script/master/ci/build.sh
-      - bash build.sh elainaX-11
+      - bash build.sh android-11
