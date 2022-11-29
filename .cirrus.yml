@@ -4,6 +4,7 @@ task:
     TELEGRAM_CHAT: ENCRYPTED[64dee47565224fc565f425a5e933411fcfb578bca824f49168136c256a89de34f466be5f1b373cf4730cf7059b3295cc]
     GIT_TOKEN: ENCRYPTED[be2f375d25b726cc4726889a52eb63d178cd2659f91777a161da80f8e14628337e999fd227578b48c54ab86a942bd49e]
     TC: ryz
+
   name: Build Kernel
   timeout_in: 2h
   container:
@@ -16,6 +17,6 @@ task:
       - echo "en_US.UTF-8 UTF-8" | sudo tee -a /etc/locale.gen
       - echo "LANG=en_US.UTF-8" | sudo tee -a /etc/locale.conf
       - sudo locale-gen en_US.UTF-8
-      - wget https://raw.githubusercontent.com/ryz-code/my-script/master/ci/build.sh
-      - bash build.sh 12.1/main
+      - wget https://raw.githubusercontent.com/ryz-code/sc-kernel/main/ci/build.sh
+      - bash build.sh next
     
