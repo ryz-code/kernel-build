@@ -13,5 +13,5 @@ task:
       greedy: true
 
   Build_script:
-      - git clone --depth=1 -b t13 https://github.com/itsshashanksp/kernel_xiaomi_sm6150 lv && cd lv
+      - git clone --depth=1 -b t13 https://github.com/ryz-code/kernel_xiaomi_sm6150 lv && cd lv
       - bash build.sh --proton
