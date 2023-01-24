@@ -17,6 +17,6 @@ task:
       - echo "en_US.UTF-8 UTF-8" | sudo tee -a /etc/locale.gen
       - echo "LANG=en_US.UTF-8" | sudo tee -a /etc/locale.conf
       - sudo locale-gen en_US.UTF-8
-      - wget https://github.com/itsshashanksp/myscripts/main
-      - bash kernel.sh
+      - wget https://github.com/itsshashanksp/myscripts.git
+      - bash kernel.sh next
     
