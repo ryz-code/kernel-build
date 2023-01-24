@@ -1,22 +1,17 @@
+env:
+    token: "ENCRYPTED[7303401155ce6381cf4bff8323e518d4ed8c32e35b858b2225eb3e645aaf1299d346f1b1afbcb26031268fb92b3c11cf]"
+    chat_id: "ENCRYPTED[3ce8813da1a085315e4379b25a495ed15c1ecaeb502e76a598d855a3d002b3a55e69dba33d87c7343906dd11c16d8766]"
+    
 task:
-  environment:
-    TELEGRAM_TOKEN: ENCRYPTED[7303401155ce6381cf4bff8323e518d4ed8c32e35b858b2225eb3e645aaf1299d346f1b1afbcb26031268fb92b3c11cf]
-    TELEGRAM_CHAT: ENCRYPTED[3ce8813da1a085315e4379b25a495ed15c1ecaeb502e76a598d855a3d002b3a55e69dba33d87c7343906dd11c16d8766]
-    GIT_TOKEN: ENCRYPTED[be2f375d25b726cc4726889a52eb63d178cd2659f91777a161da80f8e14628337e999fd227578b48c54ab86a942bd49e]
-    TC: ryz
-
-  name: Build Kernel
-  timeout_in: 2h
+  name: "Kernel deploy.."
+  timeout_in: 120m
   container:
-      image: panchajanya1999/archlinux:latest
+      image: z4nyx/docker:latest
       cpu: 4
       memory: 16G
+      stateful: true
+      greedy: true
 
   Build_script:
-      - echo "LC_ALL=en_US.UTF-8" | sudo tee -a /etc/environment
-      - echo "en_US.UTF-8 UTF-8" | sudo tee -a /etc/locale.gen
-      - echo "LANG=en_US.UTF-8" | sudo tee -a /etc/locale.conf
-      - sudo locale-gen en_US.UTF-8
-      - wget https://github.com/itsshashanksp/myscripts.git
-      - bash kernel.sh next
-    
+      - git clone --depth=1 -b t13 https://github.com/itsshashanksp/kernel_xiaomi_sm6150 lv && cd lv
+      - bash build.sh --proton
