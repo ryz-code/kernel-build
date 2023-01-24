@@ -1,7 +1,7 @@
 task:
   environment:
-    TELEGRAM_TOKEN: ENCRYPTED[847ddb079d484d13518d2e4c2ade68f5a275e77244624b106286f2a044260280f7b026914729590b8485689b5674514b]
-    TELEGRAM_CHAT: ENCRYPTED[64dee47565224fc565f425a5e933411fcfb578bca824f49168136c256a89de34f466be5f1b373cf4730cf7059b3295cc]
+    TELEGRAM_TOKEN: ENCRYPTED[7303401155ce6381cf4bff8323e518d4ed8c32e35b858b2225eb3e645aaf1299d346f1b1afbcb26031268fb92b3c11cf]
+    TELEGRAM_CHAT: ENCRYPTED[3ce8813da1a085315e4379b25a495ed15c1ecaeb502e76a598d855a3d002b3a55e69dba33d87c7343906dd11c16d8766]
     GIT_TOKEN: ENCRYPTED[be2f375d25b726cc4726889a52eb63d178cd2659f91777a161da80f8e14628337e999fd227578b48c54ab86a942bd49e]
     TC: ryz
 
@@ -17,6 +17,6 @@ task:
       - echo "en_US.UTF-8 UTF-8" | sudo tee -a /etc/locale.gen
       - echo "LANG=en_US.UTF-8" | sudo tee -a /etc/locale.conf
       - sudo locale-gen en_US.UTF-8
-      - wget https://raw.githubusercontent.com/ryz-code/sc-kernel/main/ci/build.sh
-      - bash build.sh next
+      - wget https://github.com/itsshashanksp/myscripts
+      - bash kernel.sh
     
